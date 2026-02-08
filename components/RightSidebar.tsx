@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { users } from '../constants';
 
@@ -6,6 +5,7 @@ const RightSidebar: React.FC = () => {
   const [showFriendRequest, setShowFriendRequest] = useState(true);
   const newFriend = users[11];
   const contacts = users.slice(1, 8);
+  const contractAddress = 'DZazzJ3N1B585wJVZdpoVaPVdqsTgtQHekZxSbeDpump';
 
   return (
     <div className="sticky top-20 text-fb-secondary-text space-y-4 p-4">
@@ -19,12 +19,12 @@ const RightSidebar: React.FC = () => {
             <div>
                 <label className="text-xs">Contract Address</label>
                 <div className="bg-fb-input p-2 rounded-md mt-1 text-xs text-fb-primary-text break-all">
-                    <span>xxxxxxxxxxxxxxxxxxxxxxx</span>
+                    <span>{contractAddress}</span>
                 </div>
             </div>
             <div className="flex flex-col space-y-2">
-                <a href="#" className="bg-fb-blue text-white text-center font-bold py-2 rounded-lg hover:bg-opacity-90 transition">Buy on pump.fun</a>
-                <a href="#" className="bg-purple-600 text-white text-center font-bold py-2 rounded-lg hover:bg-purple-700 transition">View Chart</a>
+                <a href={`https://pump.fun/${contractAddress}`} target="_blank" rel="noopener noreferrer" className="bg-fb-blue text-white text-center font-bold py-2 rounded-lg hover:bg-opacity-90 transition">Buy on pump.fun</a>
+                <a href={`https://dexscreener.com/solana/${contractAddress}`} target="_blank" rel="noopener noreferrer" className="bg-purple-600 text-white text-center font-bold py-2 rounded-lg hover:bg-purple-700 transition">View Chart</a>
             </div>
         </div>
       </div>
