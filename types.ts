@@ -15,4 +15,5 @@ export interface Post {
   comments: number; // initial comment count
   isLiked?: boolean;
   commentList?: string[];
+  prefilledComments?: { userId: number; text: string; }[];
 }

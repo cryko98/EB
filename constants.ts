@@ -1,6 +1,9 @@
 
 import type { User, Post } from './types';
 
+// EL logo: SVG for Epstein Leaks, white text on black circle
+const epsteinLeaksAvatar = `data:image/svg+xml;base64,${btoa('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="black" /><text x="50" y="60" font-size="40" fill="white" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold">EL</text></svg>')}`;
+
 export const users: User[] = [
   { id: 1, name: 'Jeffrey Epstein', avatarUrl: 'https://jeffedin.vercel.app/images/epstein.jpg' },
   { id: 2, name: 'Ghislaine Maxwell', avatarUrl: 'https://jeffedin.vercel.app/images/maxwell.jpg' },
@@ -14,6 +17,10 @@ export const users: User[] = [
   { id: 10, name: 'Chris Tucker', avatarUrl: 'https://epstagram.xyz/images/pfp/chris-tucker.png' },
   { id: 11, name: 'Naomi Campbell', avatarUrl: 'https://epstagram.xyz/images/pfp/naomi-campbell.png' },
   { id: 12, name: 'Mark Zuckerberg', avatarUrl: 'https://i.imgur.com/n742t1i.jpeg'},
+  { id: 13, name: 'Epstein Leaks', avatarUrl: epsteinLeaksAvatar },
+  { id: 14, name: 'Woody Allen', avatarUrl: 'https://i.dailymail.co.uk/1s/2024/01/04/00/79590815-12925573-image-m-26_1704326553255.jpg' },
+  { id: 15, name: 'Richard Branson', avatarUrl: 'https://m.media-amazon.com/images/M/MV5BMTc3MjQ0NTEyMV5BMl5BanBnXkFtZTcwODMyNTQxMw@@._V1_.jpg' },
+  { id: 16, name: 'Dean Kamen', avatarUrl: 'https://media.newyorker.com/photos/590961841c7a8e3353381669/master/pass/090511_r18428_p646.jpg' },
 ];
 
 export const posts: Post[] = [
@@ -24,9 +31,27 @@ export const posts: Post[] = [
     text: 'Another successful week of networking and fostering global connections. The island provides such a wonderful, private venue for important discussions.',
     imageUrl: 'https://i.imgur.com/sFE8P2d.jpeg',
     likes: 431,
-    comments: 88,
+    comments: 2,
     isLiked: false,
     commentList: [],
+    prefilledComments: [
+        { userId: 2, text: 'Everything was perfect, darling.' },
+        { userId: 8, text: 'Very productive.' },
+    ]
+  },
+  {
+    id: 12,
+    userId: 7,
+    timestamp: '1 day ago',
+    text: 'Important discussions about art and philosophy with Woody. The flight was short, but the conversation was deep.',
+    imageUrl: 'https://i.dailymail.co.uk/1s/2025/12/13/09/104696051-15380407-Larry_Summers_and_Woody_Allen_on_a_plane-m-36_1765619457509.jpg',
+    likes: 345,
+    comments: 1,
+    isLiked: false,
+    commentList: [],
+     prefilledComments: [
+        { userId: 14, text: 'Fascinating perspectives, Larry. Truly.' }
+    ]
   },
   {
     id: 2,
@@ -35,41 +60,39 @@ export const posts: Post[] = [
     text: 'Enjoyed a fascinating trip with Jeffrey. We discussed the future of global philanthropy and youth outreach. Always inspiring to connect with sharp minds. The flight back was smooth!',
     imageUrl: 'https://i.imgur.com/qSHxftz.jpeg',
     likes: 1998,
-    comments: 789,
+    comments: 2,
     isLiked: false,
     commentList: [],
+    prefilledComments: [
+        { userId: 1, text: 'The pleasure was all mine, Bill.' },
+        { userId: 5, text: 'You guys have all the fun!' },
+    ]
   },
   {
-    id: 3,
-    userId: 2,
+    id: 13,
+    userId: 13,
     timestamp: '2 days ago',
-    text: 'Making sure all our guests are comfortable is my top priority. A personal touch goes a long way. So glad everyone enjoyed the party last night!',
-    likes: 350,
-    comments: 45,
+    text: 'Found in the Palm Beach residence medicine cabinet. Seems to be a common prescription for guests.',
+    imageUrl: 'https://i.dailymail.co.uk/1s/2025/12/18/18/104854299-15396741-One_of_the_images_shows_medicine_to_treat_a_urinary_tract_infect-m-16_1766081399620.jpg',
+    likes: 2500,
+    comments: 0,
     isLiked: false,
     commentList: [],
+    prefilledComments: []
   },
   {
-    id: 4,
-    userId: 8,
-    timestamp: '2 days ago',
-    text: 'The code for the future is complex. Flew down to brainstorm with some fellow visionaries. The key to solving the world\'s problems is unconventional thinking.',
-    imageUrl: 'https://epstagram.xyz/images/posts/bill-gates-and-epstein.png',
-    likes: 1500,
-    comments: 215,
-    isLiked: false,
-    commentList: [],
-  },
-    {
     id: 11,
     userId: 8,
     timestamp: '2 days ago',
     text: 'Productive meeting with Jeffrey and some other great minds. Discussing how to scale up our philanthropic impact. The location was very... secure.',
-    imageUrl: 'https://i.dailymail.co.uk/1s/2026/02/02/18/105973447-15513681-Epstein_has_a_meeting_with_Gates_and_another_man_at_an_undisclos-a-7_1770057514279.jpg',
+    imageUrl: 'https://i.dailymail.co.uk/1s/2026/02/02/18/105973447-15513681-Epstein_has_a_meeting_with_Gates_and_another_man_at_an_undisclos-a-7_1769807514279.jpg',
     likes: 1850,
-    comments: 310,
+    comments: 1,
     isLiked: false,
     commentList: [],
+     prefilledComments: [
+        { userId: 7, text: 'A truly stimulating exchange of ideas.' }
+    ]
   },
   {
     id: 5,
@@ -78,41 +101,53 @@ export const posts: Post[] = [
     text: 'A delightful getaway. One must concede, the hospitality was truly fit for a royal. I have absolutely no memory of anything specific, but I\'m sure it was all perfectly pleasant.',
     imageUrl: 'https://i.imgur.com/GzBBL6j.jpeg',
     likes: 310,
-    comments: 77,
+    comments: 1,
     isLiked: false,
     commentList: [],
+    prefilledComments: [
+        { userId: 2, text: 'So glad you could attend, your highness.' }
+    ]
   },
-  {
-    id: 6,
-    userId: 7,
+    {
+    id: 14,
+    userId: 15,
     timestamp: '4 days ago',
-    text: 'Economics is about managing scarce resources. Time is the most scarce of all. Glad to have spent some of it discussing fiscal policies and other... assets... with Jeff.',
-    likes: 210,
-    comments: 33,
+    text: 'Surrounded by innovators! Great chat with Dean and Jeff about the future of transport and private islands. Big ideas brewing.',
+    imageUrl: 'https://i.dailymail.co.uk/1s/2025/12/13/09/104691759-15380407-Segway_inventor_Dean_Kamen_left_and_billionaire_Richard_Branson_-a-1_1765617012295.jpg',
+    likes: 987,
+    comments: 2,
     isLiked: false,
     commentList: [],
+    prefilledComments: [
+        { userId: 16, text: 'The synergy was incredible.'},
+        { userId: 1, text: 'The future is bright, gentlemen.'},
+    ]
   },
   {
     id: 7,
     userId: 6,
     timestamp: '5 days ago',
     text: 'The theoretical applications of string theory on a sub-atomic level are fascinating. The barbecue was also quite good.',
-    imageUrl: 'https://epstagram.xyz/images/posts/stephen-hawking-on-epstein-island.png',
     likes: 890,
-    comments: 210,
+    comments: 1,
     isLiked: false,
     commentList: [],
+    prefilledComments: [
+        { userId: 1, text: 'An honor to host a mind like yours.' }
+    ]
   },
   {
     id: 8,
     userId: 5,
     timestamp: '6 days ago',
     text: 'Jeff was a terrific guy. He liked beautiful women, and I like beautiful women. I\'m not gonna say he was a bad guy. Great parties. The best parties.',
-    imageUrl: 'https://epstagram.xyz/images/posts/donald-trump-epstein-and-ghislaine.png',
     likes: 1024,
-    comments: 420,
+    comments: 1,
     isLiked: false,
     commentList: [],
+    prefilledComments: [
+        { userId: 2, text: 'You were the life of the party, Donald!'}
+    ]
   },
   {
     id: 9,
@@ -121,19 +156,51 @@ export const posts: Post[] = [
     text: 'Just had the temple repainted. The new gold leaf really brings out the mysterious, esoteric vibe we were going for. Perfect for quiet contemplation.',
     imageUrl: 'https://i.dailymail.co.uk/1s/2026/02/02/18/105979081-15513681-A_diagram_mapping_Epstein_s_inner_circle_released_by_the_Justice-a-12_1770057514516.jpg',
     likes: 666,
-    comments: 150,
+    comments: 1,
     isLiked: false,
     commentList: [],
+    prefilledComments: [
+        { userId: 3, text: 'Looks rather splendid.'}
+    ]
+  },
+  {
+    id: 15,
+    userId: 13,
+    timestamp: '1 week ago',
+    text: 'A lot of familiar faces in these unreleased albums.',
+    imageUrl: 'https://i.dailymail.co.uk/1s/2026/01/30/20/105971517-15514221-A_new_photo_showing_Bill_Gates_and_Jeffrey_Epstein_with_friends_-a-17_1769803802883.jpg',
+    likes: 3100,
+    comments: 0,
+    isLiked: false,
+    commentList: [],
+    prefilledComments: []
   },
   {
     id: 10,
     userId: 9,
     timestamp: '1 week ago',
     text: 'On my way to a private acting workshop on a secluded island. The best way to really get into character. No distractions.',
-    imageUrl: 'https://epstagram.xyz/images/posts/kevin-spacey-on-the-lolita-express.png',
     likes: 451,
-    comments: 112,
+    comments: 1,
     isLiked: false,
     commentList: [],
+    prefilledComments: [
+        { userId: 10, text: 'Save me a seat!'}
+    ]
   },
+  {
+    id: 16,
+    userId: 1,
+    timestamp: '2 weeks ago',
+    text: 'Appreciating the finer things in life. Art is about pushing boundaries and challenging conventions.',
+    imageUrl: 'https://i.dailymail.co.uk/1s/2025/12/21/12/104897079-15400847-Images_of_erotica_were_a_theme_in_Epstein_s_home_with_countless_-a-33_1766321268732.jpg',
+    likes: 720,
+    comments: 2,
+    isLiked: false,
+    commentList: [],
+    prefilledComments: [
+        { userId: 14, text: 'Very avant-garde, Jeffrey.'},
+        { userId: 2, text: 'Exquisite taste.'}
+    ]
+  }
 ];

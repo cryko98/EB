@@ -1,12 +1,14 @@
 
 import React, { useState } from 'react';
 import type { Post as PostType, User as UserType } from '../types';
+import { users } from '../constants';
 
 interface PostProps {
   post: PostType;
   user: UserType;
   onLike: (postId: number) => void;
   onComment: (postId: number, commentText: string) => void;
+  getUserById: (userId: number) => UserType | undefined;
 }
 
 const PostActionButton: React.FC<{ icon: React.ReactElement; label: string; onClick?: () => void; isActive?: boolean }> = ({ icon, label, onClick, isActive }) => {
@@ -21,9 +23,9 @@ const PostActionButton: React.FC<{ icon: React.ReactElement; label: string; onCl
     );
 };
 
-const Post: React.FC<PostProps> = ({ post, user, onLike, onComment }) => {
+const Post: React.FC<PostProps> = ({ post, user, onLike, onComment, getUserById }) => {
   const [newComment, setNewComment] = useState('');
-  const currentUser = user; // Assuming the logged in user is the post author for comment avatar
+  const loggedInUser = users[0];
 
   const handleCommentSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,7 +35,7 @@ const Post: React.FC<PostProps> = ({ post, user, onLike, onComment }) => {
     }
   };
 
-  const commentCount = post.commentList?.length || 0;
+  const commentCount = (post.prefilledComments?.length || 0) + (post.commentList?.length || 0);
 
   return (
     <div className="bg-fb-card rounded-lg shadow-md">
@@ -104,17 +106,30 @@ const Post: React.FC<PostProps> = ({ post, user, onLike, onComment }) => {
       {/* Comments Section */}
       <div className="border-t border-fb-hover mx-4"></div>
       <div className="p-4 space-y-3">
+        {post.prefilledComments && post.prefilledComments.map((comment, index) => {
+            const commenter = getUserById(comment.userId);
+            if (!commenter) return null;
+            return (
+                <div key={`prefilled-${index}`} className="flex items-start space-x-2">
+                    <img src={commenter.avatarUrl} alt={commenter.name} className="w-8 h-8 rounded-full" />
+                    <div className="bg-fb-input rounded-xl p-2 text-sm">
+                    <p className="font-semibold text-fb-primary-text">{commenter.name}</p>
+                    <p className="text-fb-primary-text">{comment.text}</p>
+                    </div>
+                </div>
+            );
+        })}
         {post.commentList && post.commentList.map((comment, index) => (
-          <div key={index} className="flex items-start space-x-2">
-            <img src={currentUser.avatarUrl} alt={currentUser.name} className="w-8 h-8 rounded-full" />
+          <div key={`user-${index}`} className="flex items-start space-x-2">
+            <img src={loggedInUser.avatarUrl} alt={loggedInUser.name} className="w-8 h-8 rounded-full" />
             <div className="bg-fb-input rounded-xl p-2 text-sm">
-              <p className="font-semibold text-fb-primary-text">{currentUser.name}</p>
+              <p className="font-semibold text-fb-primary-text">{loggedInUser.name}</p>
               <p className="text-fb-primary-text">{comment}</p>
             </div>
           </div>
         ))}
         <form onSubmit={handleCommentSubmit} className="flex items-center space-x-2">
-          <img src={currentUser.avatarUrl} alt={currentUser.name} className="w-8 h-8 rounded-full" />
+          <img src={loggedInUser.avatarUrl} alt={loggedInUser.name} className="w-8 h-8 rounded-full" />
           <input
             type="text"
             value={newComment}

@@ -43,7 +43,7 @@ const Feed: React.FC = () => {
       {posts.map(post => {
         const user = getUserById(post.userId);
         if (!user) return null;
-        return <Post key={post.id} post={post} user={user} onLike={handleLike} onComment={handleComment} />;
+        return <Post key={post.id} post={post} user={user} onLike={handleLike} onComment={handleComment} getUserById={getUserById} />;
       })}
     </div>
   );
