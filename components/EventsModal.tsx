@@ -3,24 +3,24 @@ import React from 'react';
 
 const events = [
   {
-    title: "Annual 'Quantum Physics & You' Symposium",
-    description: "A deep dive into theoretical physics with special guest lecturers. Accommodations are... unique. Discretion is a must."
+    title: "Advanced Networking & Recruitment Seminar",
+    description: "A unique opportunity for promising young talent to connect with our most influential partners. Discretion and an open mind are mandatory."
   },
   {
-    title: "Advanced Massage & Wellness Workshop",
-    description: "Learn ancient relaxation techniques from our globally-sourced team of expert therapists. All sessions are private and confidential."
+    title: "VIP 'Stress Relief' Massage Certification",
+    description: "An intensive, hands-on workshop in advanced therapeutic techniques. Taught by Ghislaine. All participants receive a non-disclosure agreement."
   },
   {
-    title: "Internship Program Networking Mixer",
-    description: "An exclusive opportunity for our brightest young minds to connect with powerful mentors. Career-making connections guaranteed."
+    title: "Global Finance & Youth Philanthropy Summit",
+    description: "Discussing the future of giving with world leaders. Special focus on identifying and mentoring the next generation of philanthropists."
   },
   {
-    title: "Talent Scouting Gala & Showcase",
-    description: "Discover the next generation of models, artists, and performers. Private auditions will be held throughout the weekend."
+    title: "Exclusive Talent Showcase & Portfolio Review",
+    description: "Discover the next generation of models and performers before they're famous. Private one-on-one sessions available upon request."
   },
   {
-    title: "Mystery Island Treasure Hunt",
-    description: "A fun-filled day of puzzles and exploration. The grand prize is a 'get out of jail free' card. (Metaphorically, of course)."
+    title: "Private Island 'Unwind' Retreat",
+    description: "A weekend to disconnect from the world. No phones, no questions. Just relaxation and good company. What happens here, stays here."
   }
 ];
 
