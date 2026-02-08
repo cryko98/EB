@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import type { Post as PostType, User as UserType } from '../types';
 import { users } from '../constants';
@@ -25,6 +24,7 @@ const PostActionButton: React.FC<{ icon: React.ReactElement; label: string; onCl
 
 const Post: React.FC<PostProps> = ({ post, user, onLike, onComment, getUserById }) => {
   const [newComment, setNewComment] = useState('');
+  const [imageError, setImageError] = useState(false);
   const loggedInUser = users[0];
 
   const handleCommentSubmit = (e: React.FormEvent) => {
@@ -65,9 +65,9 @@ const Post: React.FC<PostProps> = ({ post, user, onLike, onComment, getUserById 
       <div className="px-4 pb-2 text-fb-primary-text text-[15px]">
         <p>{post.text}</p>
       </div>
-      {post.imageUrl && (
+      {post.imageUrl && !imageError && (
         <div className="bg-fb-bg -mx-px">
-          <img src={post.imageUrl} alt="Post content" className="w-full object-cover" />
+          <img src={post.imageUrl} alt="Post content" className="w-full object-cover" onError={() => setImageError(true)} />
         </div>
       )}
 
