@@ -16,11 +16,11 @@ export const users: User[] = [
   { id: 9, name: 'Kevin Spacey', avatarUrl: 'https://epstagram.xyz/images/pfp/kevin-spacey.png' },
   { id: 10, name: 'Chris Tucker', avatarUrl: 'https://epstagram.xyz/images/pfp/chris-tucker.png' },
   { id: 11, name: 'Naomi Campbell', avatarUrl: 'https://epstagram.xyz/images/pfp/naomi-campbell.png' },
-  { id: 12, name: 'Mark Zuckerberg', avatarUrl: 'https://i.imgur.com/n742t1i.jpeg'},
+  { id: 12, name: 'Mark Zuckerberg', avatarUrl: 'https://media.wired.com/photos/6862cb0455100d2a2bbf7a4b/1:1/w_2560%2Cc_limit/Zuck-Welcomes-Superintelligence-Team-Business-2170596573.jpg'},
   { id: 13, name: 'Epstein Leaks', avatarUrl: epsteinLeaksAvatar },
-  { id: 14, name: 'Woody Allen', avatarUrl: 'https://i.dailymail.co.uk/1s/2024/01/04/00/79590815-12925573-image-m-26_1704326553255.jpg' },
-  { id: 15, name: 'Richard Branson', avatarUrl: 'https://m.media-amazon.com/images/M/MV5BMTc3MjQ0NTEyMV5BMl5BanBnXkFtZTcwODMyNTQxMw@@._V1_.jpg' },
-  { id: 16, name: 'Dean Kamen', avatarUrl: 'https://media.newyorker.com/photos/590961841c7a8e3353381669/master/pass/090511_r18428_p646.jpg' },
+  { id: 14, name: 'Woody Allen', avatarUrl: 'https://m.media-amazon.com/images/M/MV5BMTI1MjU3MTI2MF5BMl5BanBnXkFtZTcwMDgxNTE4MQ@@._V1_FMjpg_UX1000_.jpg' },
+  { id: 15, name: 'Richard Branson', avatarUrl: 'https://hips.hearstapps.com/hmg-prod/images/gettyimages-1052306510.jpg?crop=1xw:1.0xh;center,top&resize=640:*' },
+  { id: 16, name: 'Dean Kamen', avatarUrl: 'https://floridainvents.org/wp-content/uploads/dean-kamen.jpg' },
 ];
 
 export const posts: Post[] = [
@@ -66,6 +66,19 @@ export const posts: Post[] = [
     prefilledComments: [
         { userId: 1, text: 'The pleasure was all mine, Bill.' },
         { userId: 5, text: 'You guys have all the fun!' },
+    ]
+  },
+  {
+    id: 21,
+    userId: 2,
+    timestamp: '1 day ago',
+    text: "My calendar is a logistical nightmare of private jets, important dinners, and managing client expectations. It's a full time job just keeping everyone happy!",
+    likes: 245,
+    comments: 1,
+    isLiked: false,
+    commentList: [],
+    prefilledComments: [
+        { userId: 1, text: 'Couldn\'t do it without you.'}
     ]
   },
   {
@@ -137,6 +150,19 @@ export const posts: Post[] = [
     ]
   },
   {
+    id: 22,
+    userId: 9,
+    timestamp: '4 days ago',
+    text: "Just returned from the most immersive acting workshop. The remote location really helps you shed your inhibitions and discover your true character. Unforgettable.",
+    likes: 380,
+    comments: 1,
+    isLiked: false,
+    commentList: [],
+    prefilledComments: [
+        { userId: 1, text: 'Glad you found it creatively fulfilling.'}
+    ]
+  },
+  {
     id: 7,
     userId: 6,
     timestamp: '5 days ago',
@@ -175,6 +201,19 @@ export const posts: Post[] = [
     prefilledComments: []
   },
   {
+    id: 23,
+    userId: 10,
+    timestamp: '1 week ago',
+    text: "Man, my billionaire friends are WILD. One minute you're on a jet, the next you're on an island. You never know what's gonna happen next! #Blessed",
+    likes: 650,
+    comments: 1,
+    isLiked: false,
+    commentList: [],
+    prefilledComments: [
+        { userId: 5, text: 'You know it!'}
+    ]
+  },
+  {
     id: 9,
     userId: 1,
     timestamp: '1 week ago',
@@ -199,6 +238,19 @@ export const posts: Post[] = [
     isLiked: false,
     commentList: [],
     prefilledComments: []
+  },
+    {
+    id: 24,
+    userId: 11,
+    timestamp: '1 week ago',
+    text: 'Another day, another private island. It is so important to disconnect and get away from it all sometimes. The privacy is just divine.',
+    likes: 950,
+    comments: 1,
+    isLiked: false,
+    commentList: [],
+    prefilledComments: [
+        { userId: 2, text: 'So happy you could make it!'}
+    ]
   },
   {
     id: 10,
@@ -240,6 +292,19 @@ export const posts: Post[] = [
     prefilledComments: [
         { userId: 14, text: 'Very avant-garde, Jeffrey.'},
         { userId: 2, text: 'Exquisite taste.'}
+    ]
+  },
+  {
+    id: 25,
+    userId: 7,
+    timestamp: '2 weeks ago',
+    text: "The Keynesian model breaks down when you factor in unregulated offshore labor markets. The poor wifi on this jet is also a significant barrier to productivity.",
+    likes: 150,
+    comments: 1,
+    isLiked: false,
+    commentList: [],
+    prefilledComments: [
+        { userId: 8, text: 'We should invest in better routers.'}
     ]
   },
   {
