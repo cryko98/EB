@@ -12,5 +12,7 @@ export interface Post {
   text: string;
   imageUrl?: string;
   likes: number;
-  comments: number;
+  comments: number; // initial comment count
+  isLiked?: boolean;
+  commentList?: string[];
 }

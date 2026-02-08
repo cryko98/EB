@@ -10,7 +10,7 @@ const App: React.FC = () => {
     <div className="bg-fb-bg min-h-screen font-sans">
       <Header />
       <main className="pt-14">
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-12 gap-4 px-4">
           <aside className="hidden lg:block col-span-3">
             <LeftSidebar />
           </aside>
