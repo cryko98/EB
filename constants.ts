@@ -85,7 +85,6 @@ export const posts: Post[] = [
     userId: 8,
     timestamp: '2 days ago',
     text: 'Productive meeting with Jeffrey and some other great minds. Discussing how to scale up our philanthropic impact. The location was very... secure.',
-    imageUrl: 'https://i.dailymail.co.uk/1s/2026/02/02/18/105973447-15513681-Epstein_has_a_meeting_with_Gates_and_another_man_at_an_undisclos-a-7_1769807514279.jpg',
     likes: 1850,
     comments: 1,
     isLiked: false,
