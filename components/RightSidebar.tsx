@@ -1,8 +1,9 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { users } from '../constants';
 
 const RightSidebar: React.FC = () => {
+  const [showFriendRequest, setShowFriendRequest] = useState(true);
   const newFriend = users[11];
   const contacts = users.slice(1, 8);
 
@@ -28,19 +29,19 @@ const RightSidebar: React.FC = () => {
         </div>
       </div>
       
-      <div className="p-4 bg-fb-card rounded-lg shadow">
+      {showFriendRequest && <div className="p-4 bg-fb-card rounded-lg shadow">
         <h3 className="font-bold text-lg text-fb-primary-text mb-4">Friend Requests</h3>
         {newFriend && <div className="flex items-start space-x-3">
             <img src={newFriend.avatarUrl} alt={newFriend.name} className="w-14 h-14 rounded-full" />
             <div className='flex-grow'>
                 <p className="font-semibold text-fb-primary-text">{newFriend.name}</p>
                 <div className='flex space-x-2 mt-2'>
-                    <button className="flex-grow bg-fb-blue text-white px-3 py-1.5 rounded-md hover:bg-opacity-90 font-semibold">Confirm</button>
-                    <button className="flex-grow bg-fb-hover text-fb-primary-text px-3 py-1.5 rounded-md hover:bg-opacity-90 font-semibold">Delete</button>
+                    <button onClick={() => setShowFriendRequest(false)} className="flex-grow bg-fb-blue text-white px-3 py-1.5 rounded-md hover:bg-opacity-90 font-semibold">Confirm</button>
+                    <button onClick={() => setShowFriendRequest(false)} className="flex-grow bg-fb-hover text-fb-primary-text px-3 py-1.5 rounded-md hover:bg-opacity-90 font-semibold">Delete</button>
                 </div>
             </div>
         </div>}
-      </div>
+      </div>}
 
        <div className="p-4 bg-fb-card rounded-lg shadow">
         <h3 className="font-bold text-lg text-fb-primary-text mb-4">Birthdays</h3>

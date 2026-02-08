@@ -24,12 +24,12 @@ export const users: User[] = [
 ];
 
 export const posts: Post[] = [
-  {
+    {
     id: 1,
     userId: 1,
     timestamp: '15 hours ago',
     text: 'Another successful week of networking and fostering global connections. The island provides such a wonderful, private venue for important discussions.',
-    imageUrl: 'https://i.imgur.com/sFE8P2d.jpeg',
+    imageUrl: 'https://i.insider.com/5d5423d918a2f7215d795a32?width=1136&format=jpeg',
     likes: 431,
     comments: 2,
     isLiked: false,
@@ -58,7 +58,7 @@ export const posts: Post[] = [
     userId: 4,
     timestamp: '1 day ago',
     text: 'Enjoyed a fascinating trip with Jeffrey. We discussed the future of global philanthropy and youth outreach. Always inspiring to connect with sharp minds. The flight back was smooth!',
-    imageUrl: 'https://i.imgur.com/qSHxftz.jpeg',
+    imageUrl: 'https://i.dailymail.co.uk/1s/2019/08/19/22/17452628-7373511-image-a-4_1566251233265.jpg',
     likes: 1998,
     comments: 2,
     isLiked: false,
@@ -80,6 +80,20 @@ export const posts: Post[] = [
     commentList: [],
     prefilledComments: []
   },
+    {
+    id: 17,
+    userId: 1,
+    timestamp: '2 days ago',
+    text: "Feeling cute, might delete later. #IslandLife",
+    imageUrl: 'https://i.dailymail.co.uk/1s/2025/12/12/22/104689213-15379805-The_second_new_image_is_an_up_close_selfie_of_Epstein_pushing_hi-a-7_1765578711840.jpg',
+    likes: 550,
+    comments: 1,
+    isLiked: false,
+    commentList: [],
+    prefilledComments: [
+        { userId: 2, text: 'Looking sharp, J.E.!' }
+    ]
+  },
   {
     id: 11,
     userId: 8,
@@ -98,7 +112,7 @@ export const posts: Post[] = [
     userId: 3,
     timestamp: '3 days ago',
     text: 'A delightful getaway. One must concede, the hospitality was truly fit for a royal. I have absolutely no memory of anything specific, but I\'m sure it was all perfectly pleasant.',
-    imageUrl: 'https://i.imgur.com/GzBBL6j.jpeg',
+    imageUrl: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/17E33/production/_122692939_andrew.jpg',
     likes: 310,
     comments: 1,
     isLiked: false,
@@ -149,6 +163,18 @@ export const posts: Post[] = [
     ]
   },
   {
+    id: 18,
+    userId: 13,
+    timestamp: '6 days ago',
+    text: 'Standard issue guest amenities. Hygiene is very important.',
+    imageUrl: 'https://i.dailymail.co.uk/1s/2025/12/12/17/104678393-15378967-A_black_latex_glove_is_included_in_the_trove_of_19_new_images_re-a-87_1765561721172.jpg',
+    likes: 2800,
+    comments: 0,
+    isLiked: false,
+    commentList: [],
+    prefilledComments: []
+  },
+  {
     id: 9,
     userId: 1,
     timestamp: '1 week ago',
@@ -187,6 +213,20 @@ export const posts: Post[] = [
         { userId: 10, text: 'Save me a seat!'}
     ]
   },
+    {
+    id: 19,
+    userId: 2,
+    timestamp: '2 weeks ago',
+    text: 'Organizing some old scrapbooks. So many wonderful memories with friends.',
+    imageUrl: 'https://i.dailymail.co.uk/1s/2025/12/21/12/104897287-15400847-Pictures_of_nude_women_were_featured_in_a_scrapbook_in_Epstein_s-a-47_1766321269241.jpg',
+    likes: 480,
+    comments: 1,
+    isLiked: false,
+    commentList: [],
+    prefilledComments: [
+        { userId: 1, text: 'The good old days.' }
+    ]
+  },
   {
     id: 16,
     userId: 1,
@@ -201,5 +241,17 @@ export const posts: Post[] = [
         { userId: 14, text: 'Very avant-garde, Jeffrey.'},
         { userId: 2, text: 'Exquisite taste.'}
     ]
-  }
+  },
+  {
+    id: 20,
+    userId: 13,
+    timestamp: '3 weeks ago',
+    text: "Curious home decor choices in the Palm Beach mansion. A lot of questions about the artwork.",
+    imageUrl: 'https://i.dailymail.co.uk/1s/2025/12/21/12/104902183-15400847-A_photograph_of_a_child_is_framed_on_a_wall_in_Epstein_s_home-a-36_1766321268833.jpg',
+    likes: 3500,
+    comments: 0,
+    isLiked: false,
+    commentList: [],
+    prefilledComments: []
+  },
 ];
