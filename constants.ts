@@ -29,7 +29,7 @@ export const posts: Post[] = [
     userId: 1,
     timestamp: '15 hours ago',
     text: 'Another successful week of networking and fostering global connections. The island provides such a wonderful, private venue for important discussions.',
-    imageUrl: 'https://i.insider.com/5d5423d918a2f7215d795a32?width=1136&format=jpeg',
+    imageUrl: 'https://www.aljazeera.com/wp-content/uploads/2025/12/afp_69444e7e83a5-1766084222.jpg?resize=770%2C513&quality=80',
     likes: 431,
     comments: 2,
     isLiked: false,
